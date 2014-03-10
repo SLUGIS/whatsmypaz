@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SLU Radio Coverage</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+</head>
+<body>
+	<div id="map" style="width: 600px; height: 400px"></div>
+
+	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+	<script>
+
+		var map = L.map('map').setView([35.3, -120.5], 13);
+
+		L.tileLayer('http://{s}.tiles.mapbox.com/v3/slugis.g8ne0hp0/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
+		}).addTo(map);
+
+
+	</script>
+</body>
+</html>
