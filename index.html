@@ -15,16 +15,16 @@
 	<script>
 
 		var map = L.map('map').setView([35.3, -120.5], 8);
+		
+		var imageUrl = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd3857.tif',
+		    imageBounds = [[-122.562, 37.1946], [-118.1464, 33.59505]];
+
+		L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 		L.tileLayer('http://{s}.tiles.mapbox.com/v3/slugis.g8ne0hp0/{z}/{x}/{y}.png', {
 			maxZoom: 18,
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
-
-	var imageUrl = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd3857.tif',
-	    imageBounds = [[-122.562, 37.1946], [-118.1464, 33.59505]];
-
-	L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 	</script>
 </body>
