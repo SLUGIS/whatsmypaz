@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 </head>
 <body>
-	<div id="map" style="width: 600px; height: 400px"></div>
+	<div id="map" style="width: 800px; height: 600px"></div>
 
 	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<script>
@@ -21,10 +21,10 @@
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
 		
-		var imageUrl = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd.png',
+		var fiveCities = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd.png',
 		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
 
-		L.imageOverlay(imageUrl, imageBounds, {opacity: 0.5}).addTo(map);
+		L.imageOverlay(fiveCities, imageBounds, {opacity: 0.5}).addTo(map);
 	</script>
 </body>
 </html>
