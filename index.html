@@ -21,50 +21,32 @@
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
 		
-		var fiveCities = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
-
-		L.imageOverlay(fiveCities, imageBounds, {opacity: 0.5});
+		var fiveCities = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/5CitiesCmd.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 		
-		var bayCmd = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/BayCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var bayCmd = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/BayCmd.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(bayCmd, imageBounds, {opacity: 0.5});
-		
-		var cdfCmd1 = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CDF_Cmd1.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var cdfCmd1 = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CDF_Cmd1.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(cdfCmd1, imageBounds, {opacity: 0.5});		
-		
-		var cdfCmd2 = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CDF_Cmd2.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var cdfCmd2 = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CDF_Cmd2.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(cdfCmd2, imageBounds, {opacity: 0.5});
-		
-		var countyNet = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CountyNet.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var countyNet = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/CountyNet.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(countyNet, imageBounds, {opacity: 0.5});
-		
-		var localNet = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/LocalNet.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var localNet = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/LocalNet.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(localNet, imageBounds, {opacity: 0.5});
-		
-		var riverCmd = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/RiverCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
+		var riverCmd = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/RiverCmd.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 
-		L.imageOverlay(riverCmd, imageBounds, {opacity: 0.5});
-		
-		var davisPeak = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/SLU_L11DavisPeak.png',
-		    imageBounds = [[37.10102, -122.8813], [33.50148, -118.4707]];
+		var davisPeak = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/SLU_L11DavisPeak.png',
+		    imageBounds = [[37.10102, -122.8813], [33.50148, -118.4707]], {opacity: 0.5});
 
-		L.imageOverlay(davisPeak, imageBounds, {opacity: 0.5});
-		
-		var xslCmd4 = 'https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/XSL_Cmd4.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]];
-
-		L.imageOverlay(xslCmd4, imageBounds, {opacity: 0.5});
+		var xslCmd4 = L.imageOverlay('https://s3-us-west-1.amazonaws.com/slu/RadioCoverage/XSL_Cmd4.png',
+		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.5});
 		
 		var overlays = {
 			"5 Cities Command": fiveCities,
