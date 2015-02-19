@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>SLU Radio Coverage</title>
+	<link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_16x16.png" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,6 +20,21 @@
 		html, body, #map {
 			height: 100%;
 		}
+
+		.my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
+		background-size: 150px 150px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-clip: border-box;
+		-webkit-transition: background-size 0.2s;
+		transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
+		display: inline-block; 
+		width: 200px; 
+		height: 200px; 
+}
+	.my-custom-control:hover {
+    	background-size: 200px;
+}
 	</style>
 
 </head>
@@ -27,6 +44,24 @@
 	<script>
 
 		var map = L.map('map').setView([35.3, -120.5], 8);
+		var MyControl = L.Control.extend({
+    		options: {
+      			position: 'bottomleft'
+    },
+    
+    	onAdd: function (map) {
+      // create the control container with a particular class name
+      // ** you can add the image to the div as a background image using css
+      	var imageLink = document.createElement('a');
+          imageLink.href = 'http://slocountyfire.org/';
+      	var container = L.DomUtil.create('div', 'my-custom-control');
+      imageLink.appendChild(container);
+      // ... initialize other DOM elements, add listeners, etc.
+      return imageLink;
+    }
+});
+
+	map.addControl(new MyControl());
 		
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
 			subdomains: ['a','b','c','d'],
