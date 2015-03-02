@@ -128,7 +128,7 @@
 			var radius = e.accuracy / 2;
 
 			var layer = leafletPip.pointInLayer(e.latlng, states, true);
-			if (!layer) {
+			if (layer.length == 0) {
 				L.marker(e.latlng).addTo(map)
 				.bindPopup("You are not within a Protective Action Zone.").openPopup();
 			}
