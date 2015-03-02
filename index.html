@@ -58,6 +58,18 @@
 	    	background-size: 100px;
 		}
 
+		/*show a larger image when you're on a big screen*/
+		@media screen and (min-width: 1200px) {
+		    .my-custom-control {
+		    	background-size: 150px 150px;
+		        width: 200px;
+		        height: 200px;
+		    }
+		    .my-custom-control:hover {
+	    		background-size: 200px;
+			}
+		}
+
 		
 	</style>
 
@@ -66,26 +78,25 @@
 	<div id="title">What's my PAZ?</div>
 	<div id="map"></div>
 	<div id='state' class='state'></div>
-	<div class="my-custom-control"><a href='http://slocountyfire.org/'></a></div>
 	<script>
 		var state = document.getElementById('state');
 		var map = L.map('map').setView([35.3, -120.5], 8);
 
-			var MyControl = L.Control.extend({
-    		options: {
-      			position: 'bottomleft'
-	    	},
-	    
-	    	onAdd: function (map) {
-	      // create the control container with a particular class name
-	      // ** you can add the image to the div as a background image using css
-	      	var imageLink = document.createElement('a');
-	        imageLink.href = 'http://slocountyfire.org/';
-	      	var container = L.DomUtil.create('div', 'my-custom-control');
-	      	imageLink.appendChild(container);
-	      // ... initialize other DOM elements, add listeners, etc.
-	      	return imageLink;
-	    	}
+		var MyControl = L.Control.extend({
+		options: {
+  			position: 'bottomleft'
+    	},
+    
+    	onAdd: function (map) {
+      // create the control container with a particular class name
+      // ** you can add the image to the div as a background image using css
+      	var imageLink = document.createElement('a');
+        imageLink.href = 'http://slocountyfire.org/';
+      	var container = L.DomUtil.create('div', 'my-custom-control');
+      	imageLink.appendChild(container);
+      // ... initialize other DOM elements, add listeners, etc.
+      	return imageLink;
+    	}
 		});
 		
 
