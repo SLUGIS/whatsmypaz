@@ -28,7 +28,7 @@
 			height: 100%;
 		}
 
-		.my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
+		/*.my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
 		background-size: 150px 150px;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -40,7 +40,7 @@
 		height: 200px; 
 }
 		.my-custom-control:hover {
-	    	background-size: 200px;
+	    	background-size: 200px;*/
 }
 	</style>
 
@@ -76,11 +76,6 @@
 			label.setContent(feature.properties.NAME1_);
 			label.setLatLng(layer.getBounds().getCenter());
 			map.showLabel(label);
-			/*L.marker(layer.getBounds().getCenter(), {opacity: 0.01}).bindLabel(feature.properties.NAME1_, {
-				noHide: true,
-				className: "pazLabel",
-				offset: [0,0]
-			}).addTo(map);*/
 		},
 		style: function(feature) {
 		    switch (feature.properties.NAME2_) {
@@ -114,10 +109,15 @@
 			var radius = e.accuracy / 2;
 
 			var layer = leafletPip.pointInLayer(e.latlng, states, true);
-
-			L.marker(e.latlng).addTo(map)
+			if (!layer) {
+				L.marker(e.latlng).addTo(map)
+				.bindPopup("You are not within a Protective Action Zone.").openPopup();
+			}
+			else {
+				L.marker(e.latlng).addTo(map)
 				.bindPopup("You are within " + layer[0].feature.properties.NAME1_).openPopup();
-		
+			}
+			
 		}
 
 		function onLocationError(e) {
