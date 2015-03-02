@@ -11,12 +11,13 @@
 
 	<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 	<link rel="stylesheet" href="leaflet.label.css" />
-	
+	<link rel="stylesheet" href="Control.Geocoder.css" />
+
 	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<script src="paz.geojson"></script>
 	<script src='leaflet-pip.min.js'></script>
 	<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-
+	<script src="Control.Geocoder.js"></script>
 	<script src="Label.js"></script>
 
 	<style>
@@ -42,17 +43,33 @@
 			padding:10px;
 		}
 
+		.locator {
+			background: url('locate.png'); 
+			background-color: #fff;
+			background-size: 20px 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+			position:relative;
+			display: inline-block; 
+			box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+			-webkit-border-radius: 4px;
+			        border-radius: 4px;
+			width: 26px;
+			height: 26px;
+		}
+
 		.my-custom-control { 
-		background: url('seal.png'); 
-		background-size: 75px 75px;
-		background-repeat: no-repeat;
-		background-position: center;
-		position:relative;
-		-webkit-transition: background-size 0.2s;
-		transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
-		display: inline-block; 
-		width: 100px; 
-		height: 100px;
+			background: url('seal.png'); 
+			background-size: 75px 75px;
+			background-repeat: no-repeat;
+			background-position: center;
+			position:relative;
+			-webkit-transition: background-size 0.2s;
+			transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
+			display: inline-block; 
+			width: 100px; 
+			height: 100px;
+			color: #fff;
 		}
 		.my-custom-control:hover {
 	    	background-size: 100px;
@@ -79,14 +96,14 @@
 	<div id="map"></div>
 	<div id='state' class='state'></div>
 	<script>
-		var state = document.getElementById('state');
-		var map = L.map('map').setView([35.3, -120.5], 8);
+	var state = document.getElementById('state');
+	var map = L.map('map').setView([35.3, -120.5], 8);
 
-		var MyControl = L.Control.extend({
+	var MyControl = L.Control.extend({
 		options: {
   			position: 'bottomleft'
     	},
-    
+
     	onAdd: function (map) {
       // create the control container with a particular class name
       // ** you can add the image to the div as a background image using css
@@ -97,7 +114,23 @@
       // ... initialize other DOM elements, add listeners, etc.
       	return imageLink;
     	}
-		});
+	});
+
+	var newControl = L.Control.extend({
+		options: {
+			position: 'topright'
+		},
+		onAdd: function (map) {
+	      // create the control container with a particular class name
+	      // ** you can add the image to the div as a background image using css
+	      	var imageLink = document.createElement('a');
+	        imageLink.href = '#';
+	      	var locateDiv = L.DomUtil.create('div', 'locator');
+	      	imageLink.appendChild(locateDiv);
+	      // ... initialize other DOM elements, add listeners, etc.
+	      	return imageLink;
+    	}
+	})
 		
 
 	var states = L.geoJson(paz, {
@@ -127,7 +160,10 @@
 	}).addTo(map);
 
 	map.addControl(new MyControl());
-		
+	var geocoder = L.Control.geocoder().addTo(map);
+	map.addControl(new newControl());
+	
+
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
 			subdomains: ['a','b','c','d'],
 			mapId: 'slugis.bbd863d8',
@@ -152,17 +188,16 @@
 				L.marker(e.latlng).addTo(map)
 				.bindPopup("You are within " + layer[0].feature.properties.NAME1_).openPopup();
 			}
-			
 		}
 
 		function onLocationError(e) {
 			alert(e.message);
 		}
-
+		$('.locator').click(function() {
+			map.locate({setView: true, maxZoom: 12});
+		});
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
-
-		map.locate({setView: true, maxZoom: 12});		
 
 	</script>
 </body>
