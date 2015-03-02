@@ -10,12 +10,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<link rel="stylesheet" href="leaflet.label.css" />
 	
 	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<script src="paz.geojson"></script>
 	<script src='leaflet-pip.min.js'></script>
 	<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
-	
+
+	<script src="Label.js"></script>
+
 	<style>
 		body {
 			padding: 0;
@@ -36,8 +39,8 @@
 		width: 200px; 
 		height: 200px; 
 }
-	.my-custom-control:hover {
-    	background-size: 200px;
+		.my-custom-control:hover {
+	    	background-size: 200px;
 }
 	</style>
 
@@ -65,7 +68,20 @@
       return imageLink;
     }
 });
+
 	var states = L.geoJson(paz, {
+		onEachFeature: function(feature, layer) {
+			console.log(feature);
+			var label = new L.Label();
+			label.setContent(feature.properties.NAME1_);
+			label.setLatLng(layer.getBounds().getCenter());
+			map.showLabel(label);
+			/*L.marker(layer.getBounds().getCenter(), {opacity: 0.01}).bindLabel(feature.properties.NAME1_, {
+				noHide: true,
+				className: "pazLabel",
+				offset: [0,0]
+			}).addTo(map);*/
+		},
 		style: function(feature) {
 		    switch (feature.properties.NAME2_) {
 		        case '1': return {color: "#000000", fillColor: "#ff6600"};
