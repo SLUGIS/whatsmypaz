@@ -68,18 +68,18 @@
 	var states = L.geoJson(paz, {
 		style: function(feature) {
 		    switch (feature.properties.NAME2_) {
-		        case '1': return {fillColor: "#ff0000"};
-		        case '2': return {fillColor: "#0000ff"};
-		        case '3': return {fillColor: "#ffffff"};
-		        case '4': return {fillColor: "#00ffff"};
-		        case '5': return {fillColor: "#ff00ff"};
-		        case '6': return {fillColor: "#0000ff"};
-		        case '7': return {fillColor: "#0000ff"};
-		        case '8': return {fillColor: "#0000ff"};
-		        case '9': return {fillColor: "#0000ff"};
-		        case '10': return {fillColor: "#0000ff"};
-		        case '11': return {fillColor: "#0000ff"};
-		        case '12': return {fillColor: "#0000ff"};
+		        case '1': return {color: "#000000", fillColor: "#ff6600"};
+		        case '2': return {color: "#000000", fillColor: "#ff0000"};
+		        case '3': return {color: "#000000", fillColor: "#ff9900"};
+		        case '4': return {color: "#000000", fillColor: "#99ff00"};
+		        case '5': return {color: "#000000", fillColor: "#ffff00"};
+		        case '6': return {color: "#000000", fillColor: "#ffcc00"};
+		        case '7': return {color: "#000000", fillColor: "#00cc00"};
+		        case '8': return {color: "#000000", fillColor: "#009999"};
+		        case '9': return {color: "#000000", fillColor: "#0033cc"};
+		        case '10': return {color: "#000000", fillColor: "#330099"};
+		        case '11': return {color: "#000000", fillColor: "#660099"};
+		        case '12': return {color: "#000000", fillColor: "#cc0099"};
 		    }
 		}
 	}).addTo(map);
