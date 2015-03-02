@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 	
 	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-	
+	<script src="paz.geojson"></script>
 	<style>
 		body {
 			padding: 0;
@@ -60,7 +60,7 @@
       return imageLink;
     }
 });
-
+	L.geoJson(paz).addTo(map);
 	map.addControl(new MyControl());
 		
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
@@ -130,6 +130,7 @@
 
 		map.locate({setView: true, maxZoom: 16});
 		
+
 	</script>
 </body>
 </html>
