@@ -53,6 +53,14 @@
 	content: "";
 }
 
+.leaflet-control-zoom.leaflet-bar.leaflet-control{
+	margin-top: 50px;
+}
+
+.leaflet-popup {
+	z-index: 9999;
+}
+
 .pazLabel {
 	position:absolute;
 	width:60px;

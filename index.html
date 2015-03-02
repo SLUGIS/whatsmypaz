@@ -27,7 +27,21 @@
 		html, body, #map {
 			height: 100%;
 		}
-
+		#title {
+			position:absolute;
+			width: 100%;
+			font-family: sans-serif;
+			font-size: 100%;
+			/*margin-left: 10%;
+			margin-top: 5%;*/
+			color: #fff;
+			background: #404040;
+			z-index: 999999;
+			opacity: .7;
+			filter:alpha(opacity=70);
+			padding:10px;
+    		border-radius:3px;
+		}
 		/*.my-custom-control { background: url('https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_original.png'); 
 		background-size: 150px 150px;
 		background-repeat: no-repeat;
@@ -46,6 +60,7 @@
 
 </head>
 <body>
+	<div id="title">What's my PAZ?</div>
 	<div id="map"></div>
 	<div id='state' class='state'></div>
 
@@ -99,12 +114,16 @@
 		
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
 			subdomains: ['a','b','c','d'],
-			mapId: 'slugis.25db57b7',
+			mapId: 'slugis.bbd863d8',
 			token: 'pk.eyJ1Ijoic2x1Z2lzIiwiYSI6IlB5TlZENVUifQ.Z597Ia0qffZlYcGpbJtzTA',
 			maxZoom: 18,
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
 		
+		L.control.zoom('bottomleft');
+
+		map.zoomControl.setPosition('topleft');
+
 		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
 
