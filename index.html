@@ -41,21 +41,24 @@
 			filter:alpha(opacity=70);
 			padding:10px;
 		}
+
 		.my-custom-control { 
-		background: url('seal.png'); 
-		background-size: 150px 150px;
-		background-repeat: no-repeat;
-		background-position: center;
-		position:relative;
-		-webkit-transition: background-size 0.2s;
-		transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
-		display: inline-block; 
-		width: 200px; 
-		height: 200px; 
+			background: url('seal.png'); 
+			background-size: 75px 75px;
+			background-repeat: no-repeat;
+			background-position: center;
+			position:relative;
+			-webkit-transition: background-size 0.2s;
+			transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
+			display: inline-block; 
+			width: 100px; 
+			height: 100px;
 		}
 		.my-custom-control:hover {
-	    	background-size: 200px;
+	    	background-size: 100px;
 		}
+
+		
 	</style>
 
 </head>
@@ -63,26 +66,30 @@
 	<div id="title">What's my PAZ?</div>
 	<div id="map"></div>
 	<div id='state' class='state'></div>
-
+	<div class="my-custom-control"><a href='http://slocountyfire.org/'></a></div>
 	<script>
 		var state = document.getElementById('state');
 		var map = L.map('map').setView([35.3, -120.5], 8);
-		var MyControl = L.Control.extend({
+
+		var medQuery = window.matchMedia("screen and (min-width:800px)");
+		if (medQuery.matches) {
+			var MyControl = L.Control.extend({
     		options: {
       			position: 'bottomleft'
-    },
-    
-    	onAdd: function (map) {
-      // create the control container with a particular class name
-      // ** you can add the image to the div as a background image using css
-      	var imageLink = document.createElement('a');
-          imageLink.href = 'http://slocountyfire.org/';
-      	var container = L.DomUtil.create('div', 'my-custom-control');
-      imageLink.appendChild(container);
-      // ... initialize other DOM elements, add listeners, etc.
-      return imageLink;
-    }
-});
+	    	},
+	    
+	    	onAdd: function (map) {
+	      // create the control container with a particular class name
+	      // ** you can add the image to the div as a background image using css
+	      	var imageLink = document.createElement('a');
+	        imageLink.href = 'http://slocountyfire.org/';
+	      	var container = L.DomUtil.create('div', 'my-custom-control');
+	      	imageLink.appendChild(container);
+	      // ... initialize other DOM elements, add listeners, etc.
+	      	return imageLink;
+	    	}
+		});
+		}
 
 	var states = L.geoJson(paz, {
 		onEachFeature: function(feature, layer) {
