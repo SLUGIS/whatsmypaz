@@ -65,7 +65,25 @@
       return imageLink;
     }
 });
-	var states = L.geoJson(paz).addTo(map);
+	var states = L.geoJson(paz, {
+		style: function(feature) {
+		    switch (feature.properties.NAME2_) {
+		        case '1': return {fillColor: "#ff0000"};
+		        case '2': return {fillColor: "#0000ff"};
+		        case '3': return {fillColor: "#ffffff"};
+		        case '4': return {fillColor: "#00ffff"};
+		        case '5': return {fillColor: "#ff00ff"};
+		        case '6': return {fillColor: "#0000ff"};
+		        case '7': return {fillColor: "#0000ff"};
+		        case '8': return {fillColor: "#0000ff"};
+		        case '9': return {fillColor: "#0000ff"};
+		        case '10': return {fillColor: "#0000ff"};
+		        case '11': return {fillColor: "#0000ff"};
+		        case '12': return {fillColor: "#0000ff"};
+		    }
+		}
+	}).addTo(map);
+
 	map.addControl(new MyControl());
 		
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
@@ -75,47 +93,6 @@
 			maxZoom: 18,
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
-
-		var fiveCities = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/5CitiesCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-		
-		var bayCmd = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/BayCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var cdfCmd1 = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/CDF_Cmd1.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var cdfCmd2 = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/CDF_Cmd2.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var countyNet = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/CountyNet.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var localNet = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/LocalNet.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var riverCmd = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/RiverCmd.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-
-		var davisPeak = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/SLU_L11DavisPeak.png',
-		    imageBounds = [[37.10102, -122.8813], [33.50148, -118.4707]], {opacity: 0.7});
-
-		var xslCmd4 = L.imageOverlay('https://dl.dropboxusercontent.com/u/345322813/images/XSL_Cmd4.png',
-		    imageBounds = [[37.1946, -122.562], [33.59505, -118.1464]], {opacity: 0.7});
-		
-		var overlays = {
-			"5 Cities Command": fiveCities,
-			"Bay Command": bayCmd,
-			"CDF Command 1": cdfCmd1,
-			"CDF Command 2": cdfCmd2,
-			"County Net": countyNet,
-			"Local Net": localNet,
-			"River Command": riverCmd,
-			"SLU Local 11 Davis Peak": davisPeak,
-			"XSL Command 4": xslCmd4
-		};
-		
-		L.control.layers(null, overlays, {collapsed:true}).addTo(map);
 		
 		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
@@ -125,7 +102,6 @@
 			L.marker(e.latlng).addTo(map)
 				.bindPopup("You are within " + layer[0].feature.properties.NAME1_).openPopup();
 		
-			L.circle(e.latlng, radius).addTo(map);
 		}
 
 		function onLocationError(e) {
@@ -135,7 +111,7 @@
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
 
-		map.locate({setView: true, maxZoom: 16});		
+		map.locate({setView: true, maxZoom: 12});		
 
 	</script>
 </body>
