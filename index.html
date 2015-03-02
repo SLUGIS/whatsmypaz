@@ -96,6 +96,11 @@
 			}
 		}
 
+		.pazarea {
+			position: absolute;
+			font-size: 20px;
+		}
+
 		
 	</style>
 
@@ -144,10 +149,17 @@
 	var states = L.geoJson(paz, {
 		onEachFeature: function(feature, layer) {
 			console.log(feature);
-			var label = new L.Label();
+
+			var newMarker = new L.marker(layer.getBounds().getCenter(), {opacity: 0.01});
+			newMarker.bindLabel(feature.properties.NAME1_, {
+				noHide: true,
+				className: "pazarea",
+				offset: [0,0]
+			}).addTo(map);
+			/*var label = new L.Label();
 			label.setContent(feature.properties.NAME1_);
 			label.setLatLng(layer.getBounds().getCenter());
-			map.showLabel(label);
+			map.showLabel(label);*/
 		},
 		style: function(feature) {
 		    switch (feature.properties.NAME2_) {
