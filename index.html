@@ -13,6 +13,9 @@
 	
 	<script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<script src="paz.geojson"></script>
+	<script src='leaflet-pip.min.js'></script>
+	<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+	
 	<style>
 		body {
 			padding: 0;
@@ -41,9 +44,10 @@
 </head>
 <body>
 	<div id="map"></div>
+	<div id='state' class='state'></div>
 
 	<script>
-
+		var state = document.getElementById('state');
 		var map = L.map('map').setView([35.3, -120.5], 8);
 		var MyControl = L.Control.extend({
     		options: {
@@ -61,7 +65,7 @@
       return imageLink;
     }
 });
-	L.geoJson(paz).addTo(map);
+	var states = L.geoJson(paz).addTo(map);
 	map.addControl(new MyControl());
 		
 		L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
@@ -116,9 +120,11 @@
 		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
 
-			L.marker(e.latlng).addTo(map)
-				.bindPopup("You are within " + radius + " meters from this point").openPopup();
+			var layer = leafletPip.pointInLayer(e.latlng, states, true);
 
+			L.marker(e.latlng).addTo(map)
+				.bindPopup("You are within " + layer[0].feature.properties.NAME1_).openPopup();
+		
 			L.circle(e.latlng, radius).addTo(map);
 		}
 
@@ -129,8 +135,7 @@
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
 
-		map.locate({setView: true, maxZoom: 16});
-		
+		map.locate({setView: true, maxZoom: 16});		
 
 	</script>
 </body>
