@@ -59,15 +59,10 @@
 		}
 
 		.leaflet-touch .locator {
-			background: url('locate.png'); 
-			background-color: #fff;
-			background-size: 24px 24px;
-			background-repeat: no-repeat;
-			background-position: center;
-			position:relative;
-			display: inline-block; 
+			background-size: 30px 30px;
 			box-shadow: none;
 			border: 2px solid rgba(0,0,0,0.2);
+			background-clip: padding-box;
 			width: 30px;
 			height: 30px;
 		}
@@ -112,7 +107,6 @@
 	<script>
 	var state = document.getElementById('state');
 	var map = L.map('map').setView([35.2720, -120.7185], 10);
-	//35.2720/-120.7185
 	var MyControl = L.Control.extend({
 		options: {
   			position: 'bottomleft'
