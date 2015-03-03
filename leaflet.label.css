@@ -60,9 +60,3 @@
 .leaflet-popup {
 	z-index: 9999;
 }
-
-.pazLabel {
-	position:absolute;
-	width:60px;
-	font-size:20px;
-}

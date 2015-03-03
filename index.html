@@ -192,8 +192,8 @@
 			attribution: '<a href="https://www.mapbox.com/about/maps/">Mapbox &copy; OpenStreetMap &copy</a>'
 		}).addTo(map);
 		
-		L.control.zoom('bottomleft');
-
+		//L.control.zoom('bottomleft');
+		L.Browser.retina = true;
 		map.zoomControl.setPosition('topleft');
 
 		function onLocationFound(e) {
