@@ -47,7 +47,7 @@
 
 .leaflet-touch .leaflet-control-geocoder-icon {
 	margin-top: 2px;
-	width: 26px;
+	width: 30px;
 }
 
 .leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
@@ -142,4 +142,19 @@ ul.leaflet-control-geocoder-alternatives {
 
 .leaflet-control-geocoder.leaflet-control {
 	margin-top: 50px;
+	width: 26px;
+	height: 26px;
+}
+
+/*Modified width and height to fix mobile problem; extra margin on left side of geocode icon*/
+
+.leaflet-control-geocoder.leaflet-control {
+	margin-top: 50px;
+	width: 26px;
+	height: 26px;
+}
+
+.leaflet-control-geocoder.leaflet-control.leaflet-control-geocoder-expanded {
+	width: 100%;
+	height: 100%;
 }
