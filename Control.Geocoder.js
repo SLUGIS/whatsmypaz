@@ -40,7 +40,8 @@
 			    container = L.DomUtil.create('div', className),
 				icon = L.DomUtil.create('div', 'leaflet-control-geocoder-icon', container),
 			    form = this._form = L.DomUtil.create('form', className + '-form', container),
-			    input;
+			    input,
+			    touchClass = '.leaflet-touch';
 
 			this._map = map;
 			this._container = container;
@@ -63,6 +64,11 @@
 			container.appendChild(this._alts);
 
 			L.DomEvent.addListener(form, 'submit', this._geocode, this);
+			console.log($(container));
+			if ($(container).hasClass(touchClass)) {
+				console.log("adding minimized");
+				$(form).addClass('.leaflet-control-geocoder-alternatives-minimized');
+			}
 
 			if (this.options.collapsed) {
 				if (this.options.expand === 'click') {
