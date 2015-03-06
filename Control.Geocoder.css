@@ -14,6 +14,7 @@
 	background-clip: padding-box;
     line-height: 30px;
     margin: 0 0 0 50px;
+    padding: 0 0 0 4px;
 }
 
 .leaflet-control-geocoder-form {
