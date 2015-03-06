@@ -49,8 +49,8 @@
 
 .leaflet-touch .leaflet-control-geocoder-icon {
 	/*margin-top: 2px;*/
-	width: 26px;
-	height: 26px;
+	width: 0;
+	/*height: 26px;*/
 }
 
 .leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
