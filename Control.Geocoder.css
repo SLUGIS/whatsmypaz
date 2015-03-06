@@ -144,13 +144,6 @@ ul.leaflet-control-geocoder-alternatives {
 	margin-top: 50px;
 }
 
-
-.leaflet-touch .leaflet-control-geocoder-form input {
-	width: 0px;
-	height: 0px;
-	line-height: 30px;
-}
-
 .leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-touch .leaflet-control-geocoder-error {
 	width: 200px;
 }
