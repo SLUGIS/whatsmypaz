@@ -12,7 +12,7 @@
 	box-shadow: none;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-clip: padding-box;
-    line-height: 30px;
+    line-height: 1;
     margin: 0 10px 0 50px;
 }
 
@@ -48,9 +48,9 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder-icon {
-	/*margin-top: 2px;*/
-	width: 0;
-	/*height: 26px;*/
+	margin-top: 2px;
+	width: 26px;
+	height: 26px;
 }
 
 .leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
