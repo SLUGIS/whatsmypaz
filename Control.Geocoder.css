@@ -12,7 +12,9 @@
 	box-shadow: none;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-clip: padding-box;
-    line-height: 30px;
+    /*line-height: 30px;*/
+    width: 30px;
+	height: 30px;
 }
 
 .leaflet-control-geocoder-form {
@@ -55,21 +57,12 @@
 }
 
 .leaflet-control-geocoder-expanded input, .leaflet-control-geocoder-error {
-	width: 80%;
+	width: 226px;
 	margin: 0 0 0 4px;
 	padding: 0 0 0 4px;
 	vertical-align: middle;
 	color: #000;
 }
-
-.leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-touch .leaflet-control-geocoder-error {
-	width: 60%;
-	margin: 0 0 0 4px;
-	padding: 0 0 0 4px;
-	vertical-align: middle;
-	color: #000;
-}
-
 
 .leaflet-control-geocoder-form input:focus {
 	outline: none;
