@@ -32,8 +32,8 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder-form input {
-	width: 34px;
-	height: 34px;
+	width: 26px;
+	height: 26px;
 	line-height: 30px;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-touch .leaflet-control-geocoder-error {
-width: 200px;
+	width: 200px;
 }
 
 .leaflet-control-geocoder-form input:focus {
