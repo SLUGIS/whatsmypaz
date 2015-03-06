@@ -84,13 +84,19 @@
 	    	background-size: 100px;
 		}
 
+		.leaflet-top {
+			z-index: 500;
+		}
+		.leaflet-bottom {
+			z-index: 499;
+		}
+
 		/*show a larger image when you're on a big screen*/
 		@media screen and (min-width: 1200px) {
 		    .my-custom-control {
 		    	background-size: 150px 150px;
 		        width: 200px;
 		        height: 200px;
-		        z-index: 50;
 		    }
 		    .my-custom-control:hover {
 	    		background-size: 200px;
