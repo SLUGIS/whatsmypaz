@@ -55,7 +55,7 @@
 }
 
 .leaflet-control-geocoder-expanded input, .leaflet-control-geocoder-error {
-	width: 226px;
+	width: 80%;
 	margin: 0 0 0 4px;
 	padding: 0 0 0 4px;
 	vertical-align: middle;
