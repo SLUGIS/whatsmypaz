@@ -143,7 +143,3 @@ ul.leaflet-control-geocoder-alternatives {
 .leaflet-control-geocoder.leaflet-control {
 	margin-top: 50px;
 }
-
-.leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-touch .leaflet-control-geocoder-error {
-	width: 200px;
-}
