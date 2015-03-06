@@ -137,7 +137,7 @@ ul.leaflet-control-geocoder-alternatives {
 	display: block;
 	text-decoration: none;
 	color: black;
-	/*padding: 6px 8px 16px 6px;*/
+	padding: 0px 0px 0px 0px;
 	font-size: 14px;
 	line-height: 1;
 	font-weight: bold;
