@@ -69,7 +69,7 @@
 .leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-control-geocoder-error {
 	width: 100%;
 	height: 30px;
-	margin: 0 7px 0 4px;
+	margin: 0 10px 0 4px;
 	padding: 0 0 0 4px;
 	vertical-align: middle;
 	color: #000;
