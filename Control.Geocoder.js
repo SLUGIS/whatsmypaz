@@ -61,14 +61,17 @@
 
 			form.appendChild(input);
 			form.appendChild(this._errorElement);
-			container.appendChild(this._alts);
 
-			L.DomEvent.addListener(form, 'submit', this._geocode, this);
 			console.log($(container));
 			if ($(container).hasClass(touchClass)) {
 				console.log("adding minimized");
 				$(form).addClass('.leaflet-control-geocoder-alternatives-minimized');
 			}
+			
+			container.appendChild(this._alts);
+
+			L.DomEvent.addListener(form, 'submit', this._geocode, this);
+			
 
 			if (this.options.collapsed) {
 				if (this.options.expand === 'click') {
