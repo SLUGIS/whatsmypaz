@@ -12,7 +12,7 @@
 	box-shadow: none;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-clip: padding-box;
-    line-height: 26px;
+    line-height: 30px;
     margin: 0 10px 0 50px;
 }
 
@@ -108,6 +108,8 @@ ul.leaflet-control-geocoder-alternatives {
 	padding: 0;
 }
 
+
+
 .leaflet-control-geocoder-alternatives li {
 	width: 100%;
 	overflow: hidden;
@@ -126,6 +128,16 @@ ul.leaflet-control-geocoder-alternatives {
 	text-decoration: none;
 	color: black;
 	padding: 6px 8px 16px 6px;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: bold;
+}
+
+.leaflet-touch .leaflet-control-geocoder-alternatives a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	/*padding: 6px 8px 16px 6px;*/
 	font-size: 14px;
 	line-height: 1;
 	font-weight: bold;
