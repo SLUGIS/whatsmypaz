@@ -140,15 +140,10 @@ ul.leaflet-control-geocoder-alternatives {
 	font-weight: lighter;
 }
 
-.leaflet-control-geocoder.leaflet-control {
-	margin-top: 50px;
-	width: 26px;
-	height: 26px;
-}
-
 /*Modified width and height to fix mobile problem; extra margin on left side of geocode icon*/
 
-.leaflet-control-geocoder.leaflet-control {
+
+/*.leaflet-control-geocoder.leaflet-control {
 	margin-top: 50px;
 	width: 26px;
 	height: 26px;
@@ -157,4 +152,4 @@ ul.leaflet-control-geocoder-alternatives {
 .leaflet-control-geocoder.leaflet-control.leaflet-control-geocoder-expanded {
 	width: 100%;
 	height: 100%;
-}
+}*/
