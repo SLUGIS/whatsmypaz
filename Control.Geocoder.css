@@ -62,6 +62,15 @@
 	color: #000;
 }
 
+.leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-touch .leaflet-control-geocoder-error {
+	width: 60%;
+	margin: 0 0 0 4px;
+	padding: 0 0 0 4px;
+	vertical-align: middle;
+	color: #000;
+}
+
+
 .leaflet-control-geocoder-form input:focus {
 	outline: none;
 }
