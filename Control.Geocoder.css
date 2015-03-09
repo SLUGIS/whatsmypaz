@@ -26,12 +26,12 @@
 	border: 0;
 	color: transparent;
 	background: white;
+	width: 0px;
+	height: 0px;
 }
 
 .leaflet-control-geocoder-form input {
 	font-size: 16px;
-	width: 0px;
-	height: 0px;
 	transition: width 0.125s ease-in;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .leaflet-control-geocoder-icon {
-	width: 24px;
+	width: 26px;
 	height: 26px;
 	background-image: url(geocoder.png);
 	background-repeat: no-repeat;
@@ -161,4 +161,12 @@ ul.leaflet-control-geocoder-alternatives {
 
 .leaflet-control-geocoder.leaflet-control {
 	margin-top: 50px;
+}
+
+
+@-moz-document url-prefix() { 
+  .leaflet-control-geocoder-icon {
+		width: 24px;
+		height: 26px;
+	}
 }
