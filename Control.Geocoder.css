@@ -13,8 +13,7 @@
 	border: 2px solid rgba(0,0,0,0.2);
 	background-clip: padding-box;
     line-height: 30px;
-    position:relative;
-    margin: 0 10px 0 60px;
+    margin: 0 10px 0 50px;
     width:30px;
     height:30px;
 
@@ -82,7 +81,6 @@
 .leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-control-geocoder-error {
 	width: 75%;
 	height: 26px;
-	/*margin: 0 10px 0 4px;*/
 }
 
 .leaflet-control-geocoder-form input:focus {
