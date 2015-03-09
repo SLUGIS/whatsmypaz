@@ -52,6 +52,7 @@
 
 .leaflet-control-geocoder-icon {
 	width: 26px;
+	[if IE] width: 24px;
 	height: 26px;
 	background-image: url(geocoder.png);
 	background-repeat: no-repeat;
@@ -176,3 +177,4 @@ ul.leaflet-control-geocoder-alternatives {
 		height: 26px;
 	}
 }
+
