@@ -58,12 +58,6 @@
 			this._errorElement.innerHTML = this.options.errorMessage;
 
 			this._alts = L.DomUtil.create('ul', className + '-alternatives leaflet-control-geocoder-alternatives-minimized');
-
-			console.log($(container));
-			if ($(container).hasClass(touchClass)) {
-				console.log("adding minimized");
-				$(form).addClass('.leaflet-control-geocoder-alternatives-minimized');
-			}
 			
 
 			form.appendChild(input);
