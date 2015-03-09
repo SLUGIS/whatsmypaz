@@ -51,7 +51,7 @@
 }
 
 .leaflet-control-geocoder-icon {
-	width: 26px;
+	width: 24px;
 	height: 26px;
 	background-image: url(geocoder.png);
 	background-repeat: no-repeat;
@@ -177,3 +177,9 @@ ul.leaflet-control-geocoder-alternatives {
 	}
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .leaflet-control-geocoder-icon {
+		width: 26px;
+		height: 26px;
+	}
+}
