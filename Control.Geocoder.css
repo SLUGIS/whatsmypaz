@@ -20,7 +20,7 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder.leaflet-control-geocoder-expanded {
-	width:auto !important;
+	width: 70%;
 	height:auto !important;
 }
 
@@ -109,10 +109,6 @@ ul.leaflet-control-geocoder-alternatives {
   	list-style: none;
   	padding: 0;
   	transition: height 0.125s ease-in;
-}
-
-.leaflet-touch ul.leaflet-control-geocoder-alternatives {
-	width: 70%;
 }
 
 .leaflet-control-geocoder-alternatives-minimized {
