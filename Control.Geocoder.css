@@ -79,7 +79,7 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder-expanded input, .leaflet-control-geocoder-error {
-	width: 100%;
+	width: 75%;
 	height: 26px;
 }
 
