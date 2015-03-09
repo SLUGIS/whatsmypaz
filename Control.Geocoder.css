@@ -170,15 +170,8 @@ ul.leaflet-control-geocoder-alternatives {
 }
 
 
-@-moz-document url-prefix() { 
-  .leaflet-control-geocoder-icon {
-		width: 24px;
-		height: 26px;
-	}
-}
-
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    .leaflet-control-geocoder-icon {
+	.leaflet-control-geocoder-icon {
 		width: 26px;
 		height: 26px;
 	}
