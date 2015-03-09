@@ -19,7 +19,8 @@
 }
 
 .leaflet-touch .leaflet-control-geocoder.leaflet-control-geocoder-expanded {
-	line-height: 30px;
+	width:auto!important;
+	/*height:30px !important;*/
 }
 
 .leaflet-control-geocoder-form {
