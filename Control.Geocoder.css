@@ -15,13 +15,13 @@
     line-height: 30px;
     margin: 0 10px 0 60px;
     width:30px;
-    /*height:30px;*/
+    height:30px;
 }
 
 .leaflet-touch .leaflet-control-geocoder.leaflet-control-geocoder-expanded {
 	line-height:30px;
 	width:auto!important;
-	/*height:30px;*/
+	height:auto !important;
 }
 
 .leaflet-control-geocoder-form {
